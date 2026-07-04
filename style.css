@@ -1,0 +1,109 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0a1325, #053c9b);
+        color: #fff;
+    }
+
+   .music-player {
+        background: #111;
+        width: 380px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        text-align: center;
+    }
+
+   .cover {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        background: #333;
+        overflow: hidden;
+        border: 4px solid #ff9500;
+    }
+   .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+   .cover.playing {
+        animation: rotate 10s linear infinite;
+    }
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+   .song-info h2 { font-size: 1.4em; margin-bottom: 5px; }
+   .song-info p { font-size: 0.9em; color: #aaa; margin-bottom: 20px; }
+
+   .progress-area {
+        width: 100%;
+        height: 6px;
+        background: #333;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+   .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: #ff9500;
+        border-radius: 50px;
+        transition: width 0.1s linear;
+    }
+   .time {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+        color: #aaa;
+        margin-bottom: 20px;
+    }
+
+   .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+   .controls button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+   .controls button:hover { color: #ff9500; transform: scale(1.1); }
+   .controls.play-pause {
+        font-size: 3em;
+        background: #ff9500;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+   .volume {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+   .volume input {
+        width: 100%;
+        accent-color: #ff9500;
+    }
